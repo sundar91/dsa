@@ -19,4 +19,4 @@ class Solution:
         if A.val != B.val:
             return False
 
-        return self.isSameSubTree(A.left, B.left) and self.isSameSubTree(A.right, B.right)
+        return self.isSameTree(A.left, B.left) and self.isSameTree(A.right, B.right)
