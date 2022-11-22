@@ -19,4 +19,8 @@ class Solution:
                         0 if j == 0 else dp[i][j-1]
                     )
 
+        print(dp)
         return dp[n-1][m-1]
+
+
+print(Solution().solve("ABAZDC", "BACBAD"))

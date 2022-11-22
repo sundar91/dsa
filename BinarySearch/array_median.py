@@ -1,5 +1,5 @@
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    def findMedianSortedArrays(self, nums1, nums2) -> float:
 
         A, B = nums1, nums2
         if len(B) < len(A):
@@ -8,11 +8,13 @@ class Solution:
         low, high = 0, len(A) - 1
         total_len = len(A) + len(B)
         k = total_len // 2
+        # binary search on A array (smaller array)
+        # can mid of A array participate in median
 
         while True:
 
             mid = (low + high) // 2
-            j = k - mid - 2
+            j = k - mid - 2  # since array start with 0
 
             ALeft = A[mid] if mid >= 0 else float('-Inf')
             ARight = A[mid + 1] if (mid + 1) < len(A) else float('Inf')
